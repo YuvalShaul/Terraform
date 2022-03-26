@@ -33,9 +33,8 @@ create a Cloud9 server/environment where we'll run further exercises.
 
 ```bash
 sudo yum -y install jq git
-sudo pip install --upgrade pip
-sudo ln -s /usr/local/bin/pip /bin
-sudo pip install --upgrade awscli
+python -m pip install --upgrade pip
+pip3 install --upgrade awscli
 ```
 
 ## Install Terraform
