@@ -8,9 +8,9 @@ Look at this directory and you'll see a couple of `.tf` files.
 ls -lah
 ```
 
-- main.tf
+- **main.tf**  
 Generally the name of the major configuration file in a Terraform working directory (but name is arbitrary).
-- variables.tf  
+- **variables.tf**  
 A file that is dedicated to variable definitions.  
 
 This directory is a  simple example of a terraform project or module.
