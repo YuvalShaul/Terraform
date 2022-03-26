@@ -32,27 +32,8 @@ create a Cloud9 server/environment where we'll run further exercises.
 1. This is a fully functioning bash terminal running inside an EC2 instance, but it is the base AWS Linux OS and doesn't have the things we need to execute this workshop, so lets install a few packages.
 
 ```bash
-sudo yum -y install jq git
-python -m pip install --upgrade pip
-pip3 install --upgrade awscli
+sudo yum -y install jq
 ```
-
-## Install Terraform
-
-Run these commands in your cloud9 IDE terminal window to install Terraform
-
-```bash
-curl -O https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip
-sudo unzip terraform_0.12.29_linux_amd64.zip -d /usr/bin/
-```
-
-Then test to ensure it was installed properly.
-
-```bash
-terraform -v
-```
-
-If you get an error, inform your instructor.
 
 ## Pull the exercises repository
 
@@ -62,33 +43,7 @@ do this:
 ```bash
 mkdir -p workshop
 cd workshop
-git clone https://github.com/davewadestein/terraform-workshop .
-```
-
-## Set up your environment credentials to connect to AWS
-
-place the following in your `~/.bash_profile` file at the bottom, and replace the values in brackets with your generated creds:
-```
-export AWS_ACCESS_KEY_ID=[The access key ID you created above]
-export AWS_SECRET_ACCESS_KEY=[The secret access key you created above]
-export AWS_DEFAULT_REGION=us-east-2
-```
-
-Then source your new .bash_profile and ensure environment has the appropriate env vars set:
-```
-source ~/.bash_profile
-env | grep AWS
-```
-
-The printenv above should output something like:
-```
-AWS_SECRET_ACCESS_KEY=xxxxxxx
-AWS_DEFAULT_REGION=us-east-2
-AWS_CLOUDWATCH_HOME=/opt/aws/apitools/mon
-AWS_ACCESS_KEY_ID=xxxxxx
-AWS_PATH=/opt/aws
-AWS_AUTO_SCALING_HOME=/opt/aws/apitools/as
-AWS_ELB_HOME=/opt/aws/apitools/elb
+git clone https://github.com/YuvalShaul/Terraform .
 ```
 
 Having done that, we should be ready to move on!
