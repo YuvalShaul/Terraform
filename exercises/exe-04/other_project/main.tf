@@ -1,6 +1,16 @@
 # main.tf
 
 # Declare the provider being used, in this case it's AWS.
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
+# Configure the AWS Provider
 provider "aws" {
   region = "${var.region}"
 }
