@@ -15,11 +15,11 @@ workshop, we've used the AWS provider.
  }
  ```
 
-1. Add this provider block with the new region to `main.tf` just under the existing provider block. (Note the `alias` argument–this is necessary when you have duplicate providers.)
+2. Replace the provider block content with the following.
+(Note the `alias` argument–this is necessary when you have duplicate providers.)
 
  ```hcl
  provider "aws" {
-     version = "~> 2.0"
      region = "${var.region_alt}"
      alias = "alternate"
  }
