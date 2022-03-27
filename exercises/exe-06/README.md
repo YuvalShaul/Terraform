@@ -5,16 +5,21 @@ Terraform is *ALL* about modules.  Every terraform working directory is really j
 * we are going to modularize the code we've been working with during this workshop
 * instead of constantly redeclaring everything, we are just going to reference the module that we've created and see if it works
 
-### Creating a Module
+### Calling a Module
 
 1. Create a main.tf file in the main directory for the 6th exercise.  Inside the `main.tf` file you created, add:
 
  ```hcl
- provider "aws" {
-     version = "~> 2.0"
- }
+ terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
 
- module "s3_bucket_01" {
+module "s3_bucket_01" {
      source        = "./modules/s3_bucket/"
      region        = "us-east-2"
      student_alias = var.student_alias
