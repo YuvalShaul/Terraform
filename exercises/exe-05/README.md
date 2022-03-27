@@ -15,7 +15,7 @@ workshop, we've used the AWS provider.
  }
  ```
 
-2. Replace the provider block content with the following.
+2. 2. Add another provider block, below the current provider block. Fill the new provider block with this content:  
 (Note the `alias` argument–this is necessary when you have duplicate providers.)
 
  ```hcl
