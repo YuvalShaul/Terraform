@@ -38,10 +38,14 @@ not to prompt you for input variables: `-input=[true|false]`. Let's try running 
  ...which should give you output like:
 
  ```
- Error: Unassigned variable
+ Error: No value for required variable
+│ 
+│   on variables.tf line 4:
+│    4: variable "student_alias" {
+│ 
+│ The root module input variable "student_alias" is not set, and has no default value. Use a -var or -var-file command line
+│ argument to provide a value for this variable.
 
- The input variable "student_alias" has not been assigned a value.
- This is a bug in Terraform; please report it in a GitHub issue.
  ```
 
 ### Syntactical Errors
