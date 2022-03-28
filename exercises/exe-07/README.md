@@ -59,12 +59,15 @@ not to prompt you for input variables: `-input=[true|false]`. Let's try running 
 1. Clearly a syntax problem, so run a `plan` and you should see something like:
 
  ```
- Error: Argument or block definition required
+╷
+│ Error: Unclosed configuration block
+│ 
+│   on main.tf line 25, in resource "aws_s3_bucket_object" "an_invalid_resource_definition":
+│   25: resource "aws_s3_bucket_object" "an_invalid_resource_definition" {
+│ 
+│ There is no closing brace for this block before the end of the file. This may be caused by incorrect brace nesting elsewhere
+│ in this file.
 
-     on main.tf line 17, in resource "aws_s3_bucket_object" "an_invalid_resource_definition":
-     17:
-
-     An argument or block definition is required here.
 ```
 
  The goal is to get used to what things look like depending on the type of error encountered. These syntax
@@ -72,7 +75,7 @@ not to prompt you for input variables: `-input=[true|false]`. Let's try running 
 
 ### Validation Errors
 
-This one might not be as clear as the syntax problem above. Let's pass something invalid to the AWS provider by setting a property that doesn't jive with the `aws_s3_bucket_object` resource as defined in the AWS provider.
+This one might not be as clear as the syntax problem above. Let's pass something invalid to the AWS provider by setting a property that doesn't live with the `aws_s3_bucket_object` resource as defined in the AWS provider.
 
 5. We'll modify the syntax issue above slightly, so change your resource definition to be:
 
@@ -105,12 +108,15 @@ and get a similar result. Two benefits of `validate`:
  Having run `terraform validate` you should see immediately something like the following:
 
  ```
- Error: Missing required argument
+ ╷
+│ Error: Missing required argument
+│ 
+│   on main.tf line 24, in resource "aws_s3_bucket_object" "an_invalid_resource_definition":
+│   24: resource "aws_s3_bucket_object" "an_invalid_resource_definition" {
+│ 
+│ The argument "bucket" is required, but no definition was found.
+╵
 
-    on main.tf line 17, in resource "aws_s3_bucket_object" "an_invalid_resource_definition":
-    17: resource "aws_s3_bucket_object" "an_invalid_resource_definition" {
-
-  The argument "bucket" is required, but no definition was found.
 ```
 
  So, our provider is actually giving us this. The AWS provider defines what a `aws_s3_bucket_object` should include, and what is required. The `bucket` property is required, so it's tell us we have a problem with this resource definition.
