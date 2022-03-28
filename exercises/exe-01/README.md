@@ -28,7 +28,6 @@ Let's run some terraform commands!
 
 `terraform validate`
 * runs a deeper scan of config to show potential issues with more complex problems such as circular dependencies and missing values
-* v0.12 made validate a bit simpler as far as what it does
 
 If "terraform init" is successful, you're ready to move on. 
 **For now, don't run apply. We'll get to this in a future exercise.**
