@@ -12,21 +12,14 @@ Process errors are really about just something problematic in way that `terrafor
  You should see something like:
 
  ```
- Error: Could not satisfy plugin requirements
+ Error: Inconsistent dependency lock file
+│ 
+│ The following dependency selections recorded in the lock file are inconsistent with the current configuration:
+│   - provider registry.terraform.io/hashicorp/aws: required by this configuration but no version is selected
+│ 
+│ To make the initial dependency selections that will initialize the dependency lock file, run:
+│   terraform init
 
- Plugin reinitialization required. Please run "terraform init".
-
- Plugins are external binaries that Terraform uses to access and manipulate
- resources. The configuration provided requires plugins which can't be located,
- don't satisfy the version constraints, or are otherwise incompatible.
-
- Terraform automatically discovers provider requirements from your
- configuration, including providers used in child modules. To see the
- requirements and constraints from each module, run "terraform providers".
-
-  Error: provider.aws: no suitable version installed
-  version requirements: "~> 2.0"
-  versions installed: none
  ```
 
 As we know, one of `init`'s jobs is to ensure that dependencies such as providers, modules, etc. are pulled
