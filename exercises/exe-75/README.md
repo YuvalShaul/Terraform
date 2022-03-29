@@ -28,10 +28,10 @@ Try the Following expressions:
 
 - **"hello"**
 - You cannot try [terraform heredoc](https://www.terraform.io/language/expressions/strings#heredoc-strings) directly, but you can read them:  
-**var.my-heredoc**
+**var.my-heredoc**  
 [Interpolation](https://www.terraform.io/language/expressions/strings#interpolation):  
 - **"This is my number: ${var.somenum}"**
-- **"Incrementing it by 2: ${var.somenum + 2}"**
+- **"Incrementing it by 2: ${var.somenum + 2}"**  
 [Directives](https://www.terraform.io/language/expressions/strings#directives):  
 - **"Hello, %{ if var.my_name != "" }${var.my_name}%{ else }unnamed%{ endif }!"**
 - **"Hello, %{ if var.your_name != "" }${var.your_name}%{ else }unnamed%{ endif }!"**
