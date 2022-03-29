@@ -1,7 +1,10 @@
 # Using the Terraform Console
 
-- Look at the **play-data.tf** file in this lab.
-- Run the console:  
+- Look at the **play-data.tf** file in this lab.  
+It contains some basic definitions that the console is going to use.  
+
+- cd into this directory
+- Run the console :  
 **terraform console**  
 
 Try the Following expressions:  
@@ -23,7 +26,19 @@ Try the Following expressions:
 
 ## Strings
 
-- 
+- **"hello"**
+- You cannot try [terraform heredoc](https://www.terraform.io/language/expressions/strings#heredoc-strings) directly, but you can read them:  
+**var.my-heredoc**
+[Interpolation](https://www.terraform.io/language/expressions/strings#interpolation):  
+- **"This is my number: ${var.somenum}"**
+- **"Incrementing it by 2: ${var.somenum + 2}"**
+[Directives](https://www.terraform.io/language/expressions/strings#directives):  
+- **"Hello, %{ if var.my_name != "" }${var.my_name}%{ else }unnamed%{ endif }!"**
+- **"Hello, %{ if var.your_name != "" }${var.your_name}%{ else }unnamed%{ endif }!"**
+- **"%{for person in ["Dave", "Jane", "Mike"]}  name:${person}  %{endfor}"**
+
+
+
 ## Converting between types
 
 - **var.stringnum**

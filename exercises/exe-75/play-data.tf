@@ -5,6 +5,10 @@ variable "my_name" {
   description = "My name"
   default = "Yuval"
 }
+variable "your_name" {
+  description = "Your name"
+  default = ""
+}
 
 variable "somenum" {
     default = 5
@@ -12,6 +16,18 @@ variable "somenum" {
 
 variable "stringnum" {
     default = "10"
+}
+
+variable "gap-strings" {
+  default = ["aa aa", "bb bb", "cc cc"]
+}
+
+variable "my-heredoc" {
+  default = <<END
+  line 1
+    line 2
+  line 3
+  END
 }
 
 
