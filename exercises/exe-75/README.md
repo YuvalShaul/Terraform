@@ -51,4 +51,3 @@ Try the Following expressions:
 - **var.complex.phones.home**
 - **var.complex["phones"]**
 - **var.complex["phones"]["home"]**
-- 
