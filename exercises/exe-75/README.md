@@ -51,3 +51,16 @@ Try the Following expressions:
 - **var.complex.phones.home**
 - **var.complex["phones"]**
 - **var.complex["phones"]["home"]**
+
+## Try some functions
+
+- File system:  
+**" ====  ${file("./f1.txt")}  ===="**
+- Time:  
+timestamp()
+- Hash and Crypto:  
+sha256("hello world")
+- String:  
+upper("Hello World")
+
+Try some other functions.
