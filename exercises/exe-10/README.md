@@ -19,9 +19,6 @@ terraform {
 }
 ```
 
-_ASIDE: The above is the first time we're seeing the root `terraform` block or stanza. In many cases, it's sole use will be to define a remote backend, but it also allows you to do things like define a required Terraform version via
-semantic version syntax. See https://www.terraform.io/docs/configuration/terraform.html for more info._
-
 If we look at the backend definition above, we see two things that define where state should exist:
 
 1. The S3 bucket to put the state in
