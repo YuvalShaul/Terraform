@@ -51,6 +51,18 @@ Try the Following expressions:
 - **var.complex.phones.home**
 - **var.complex["phones"]**
 - **var.complex["phones"]["home"]**
+- Maps of maps:  
+**var.map-of-maps**
+- Can we reference all internal maps?  
+**var.map-of-maps.\***  
+No, this is not what we need. It is a list with a single element...but there's an alternative:  
+**values(var.map-of-maps)**
+- So now we can:  
+**values(var.map-of-maps).*.age**  
+or even:  
+**sum(values(var.map-of-maps).*.age)**
+
+
 
 ## Try some functions
 

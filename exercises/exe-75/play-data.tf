@@ -3,19 +3,20 @@
 # Declare a variable so we can use it.
 variable "my_name" {
   description = "My name"
-  default = "Yuval"
+  default     = "Yuval"
 }
+
 variable "your_name" {
   description = "Your name"
-  default = ""
+  default     = ""
 }
 
 variable "somenum" {
-    default = 5
+  default = 5
 }
 
 variable "stringnum" {
-    default = "10"
+  default = "10"
 }
 
 variable "gap-strings" {
@@ -34,17 +35,34 @@ variable "my-heredoc" {
 variable "complex" {
   default = {
     name = "John"
-    age = 30
+    age  = 30
     phones = {
-      home = "03-1234567"
+      home   = "03-1234567"
       mobile = "050-1234567"
     }
   }
 }
 
+variable "map-of-maps" {
+  default = {
+    John = { 
+    name = "John"
+    age  = 3
+    },
+    Dave = { 
+    name = "Dave"
+    age  = 5
+    },
+    Mike = { 
+    name = "Mike"
+    age  = 7
+    }
+  }
+}
 
 resource "null_resource" "my-null" {
   provisioner "local-exec" {
     command = "echo The answer is  ${var.somenum + 4}"
   }
 }
+
