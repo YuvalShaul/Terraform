@@ -4,8 +4,8 @@
 
 Look at this directory and you'll see a couple of `.tf` files.
 
-```bash
-ls -lah
+```
+ls -la
 ```
 
 - **main.tf**  
@@ -16,16 +16,14 @@ A file that is dedicated to variable definitions.
 This directory is a  simple example of a terraform project or module.
 
 #### New SSH Key Pair
-- Create one (choose your file name):
+- Create a new local SSH keyone (choose your file name):
 ```
 cd .ssh
-aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem
+ssh-keygen -t rsa -b 2048 -f YuvKeyPair
 chmod 400 MyKeyPair.pem
 ```
-- edit your main file and use the public key
+- edit your main file and use the public key (\<your-key-name\>.pub)
 
-aws ec2 create-key-pair --key-name YuvKeyPair --query 'KeyMaterial' --output text > YuvKeyPair.pem
-ssh-keygen -y -f YuvKeyPair.pem > YuvKeyPair.pub
 
 ### Commands
 
