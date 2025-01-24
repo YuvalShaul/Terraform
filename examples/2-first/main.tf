@@ -22,5 +22,5 @@ provider "aws" {
 # declare a resource stanza so we can create something, in this case a key pair
 resource "aws_key_pair" "my_key_pair" {
   key_name   = "${var.keyname}KP"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCre9Vw4KmZ/C1RPLkLEW/ynq1ohupoKARoQpMiwVUlXTMamXR9bQTfNXRQmCtSNHaIU/Ofcx8afQ9H7SJUwuXfQfbykfl8Kqy8opGyXKeCF6t5fOMUtc07uuFOAfcJskAJYIhdHHymx9xj9VuXDFqxwB/g4G+cSZqaFeH6t0SwkK9ROrss26wB9ScTt9+iVHZMIdsPIwimYhd7pCevXh8QXP9wJdlMGkDRoAfkT5O6Jl53mivqnonfeZR7SpRkBEeZhY3kzn07trM+KqPAr67HXf9bSB6WVjus3QzKW6E7jjWLfIfF/EHy5E5HWF8fuEczcQuWYVm2ZuE7d+nbi66l"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+C+/k6T/7wy7+InYK6qwwSk87hneBpgJtlYEL2B6FB7X5+KOI2OVr6i4wPekXweRMaOOTqF0L68390pErSqKQbYOWUNNymed03csqvtI3x+H1N+ZrN+ajL5C85eh+sSo8mvGMANThue/SuYRe25lAUJWqbK1Sjs0TWBo2KaULx7lTLPFPdj8J03piXt2foZHGNAlo7bfVuVt+EcHTZQCsRKo3eOkhJinXz+7Ol4He+RnPzG2Hb0ZGbJXudSsRfIhUNTgTNlhPxTiHsZc55RPjHsI2zrkVqGno9cXZHo9B1HGuXjcTyyEPW5XGfvOP1gCm4uLu3HLvt9z8ACi4J2vJ osboxes@osboxes"
 }
