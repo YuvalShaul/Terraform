@@ -6,3 +6,11 @@ Use this to install aws cli (version 2):
 ```
 snap install aws-cli  --classic
 ```
+ #### Now install terraform cli
+ - Get your instructions from [here](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+ - It has several steps there (adding the reposutory, update, install)
+ - Verify that everything was installed:
+ ```
+ terraform --version
+ ```
+ 
