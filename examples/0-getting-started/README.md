@@ -12,7 +12,7 @@ aws configure
 ```
 - You'll have to enter 2 credentials:
   - ACCESS KEY
-  - SECRET ACCESS KEY
+  - SECRET ACCESS KEY  
   Both of these are coming from the console user configuration (part of AMI service)
 - Once this is done, you can check this by using:
 ```
