@@ -14,7 +14,11 @@ aws configure
   - ACCESS KEY
   - SECRET ACCESS KEY
   Both of these are coming from the console user configuration (part of AMI service)
-
+- Once this is done, you can check this by using:
+```
+aws sts get-caller-identity
+```
+(which will respond by telling you who you are..)
 
  #### Now install terraform cli
  - Get your instructions from [here](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
