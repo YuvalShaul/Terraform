@@ -13,8 +13,14 @@ provider "aws" {
 }
 
 
+variable "parameter_name" {
+  description = "pass to module"
+  type        = string
+  default     = "david"
+}
 
 module "ecmod" {
   source = "./ecmod"
   instance_type = "t3.small"
+  top_name = var.parameter_name
 }
