@@ -21,7 +21,7 @@ provider "aws" {
 #        https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami.html
 #
 
-data "aws_ami" "standard_amazon_linux" {
+data "aws_ami" "my_standard_amazon_linux" {
   most_recent = true
   owners      = ["amazon"] # Ensures you get the official image from AWS
 
@@ -42,7 +42,7 @@ data "aws_ami" "standard_amazon_linux" {
 
 # 4. Usage Example (How to use the data you just got)
 resource "aws_instance" "example_server" {
-  ami           = data.aws_ami.standard_amazon_linux.id
+  ami           = data.aws_ami.my_standard_amazon_linux.id
   instance_type = "t3.micro"
 
   tags = {
@@ -52,5 +52,5 @@ resource "aws_instance" "example_server" {
 
 # 5. Output (Optional: Print the ID to the terminal)
 output "found_ami_id" {
-  value = data.aws_ami.standard_amazon_linux.id
+  value = data.aws_ami.my_standard_amazon_linux.id
 }
