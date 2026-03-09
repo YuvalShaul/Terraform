@@ -1,3 +1,6 @@
+# This file contains a data source that search for an AMI.
+# To see the AMI it got you can run just "terraform plan".
+
 # 1. Required Providers block (Best practice for version locking)
 terraform {
   required_providers {
@@ -23,6 +26,9 @@ data "aws_ami" "standard_amazon_linux" {
   owners      = ["amazon"] # Ensures you get the official image from AWS
 
   # This filter targets the standard Amazon Linux 2023 image
+  # Note that we are asking for X86 architecture here
+  #
+
   filter {
     name   = "name"
     values = ["al2023-ami-2023.*-x86_64"]
