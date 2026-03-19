@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terraform Web Cluster</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        img { max-width: 500px; border: 5px solid #232f3e; border-radius: 10px; }
+        .footer { color: #666; margin-top: 20px; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <h1>Hello from AWS EFS!</h1>
+    <p>This HTML file is stored on a shared EFS volume and served by Nginx.</p>
+    
+    <!-- Point to your own bucket -->
+    <img src="https://my-terraform-project-bucket.s3.amazonaws.com/cloud-architecture.png" 
+         alt="Architecture Diagram from S3">
+
+    <div class="footer">
+        <p>Resource IDs are managed by Terraform</p>
+    </div>
+</body>
+</html>
