@@ -2,7 +2,7 @@
 
 ### Files
 
-Look at this directory and you'll see a couple of `.tf` files.
+Look at this directory and you'll see a single `.tf` file.
 
 ```
 ls -la
@@ -10,19 +10,22 @@ ls -la
 
 - **main.tf**  
 Generally the name of the major configuration file in a Terraform working directory (but name is arbitrary).
-- **variables.tf**  
-A file that is dedicated to variable definitions.  
 
 This directory is a  simple example of a terraform project or module.
 
 #### New SSH Key Pair
-- Create a new local SSH keyone (choose your file name):
+- Create a new local SSH key pair (choose your file name):
 ```
-cd .ssh
+cd ~/.ssh
 ssh-keygen -t rsa -b 2048 -f YuvKeyPair
-chmod 400 MyKeyPair.pem
+chmod 400 YuvKeyPair
 ```
-- edit your main file and use the public key (\<your-key-name\>.pub)
+- Print the public key and copy the whole line:
+```
+cat ~/.ssh/YuvKeyPair.pub
+```
+- Edit `main.tf` and paste it in place of `write your own public key here`.
+  The private key (`YuvKeyPair`) stays on your machine.
 
 
 ### Commands
