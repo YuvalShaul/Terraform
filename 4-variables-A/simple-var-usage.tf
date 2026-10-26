@@ -18,13 +18,13 @@ provider "local" {
 }
 
 # 3. Variable Definition
-variable "filename_suffix" {
+variable "the_filename" {
   type    = string
-  default = "complete-example"
 }
+
 
 # 4. Resource Definition
 resource "local_file" "modern_example" {
   content  = "Modern Terraform syntax requires explicit provider blocks."
-  filename = "${path.module}/file-${var.filename_suffix}.txt"
+  filename = "${path.module}/file-${var.the_filename}.txt"
 }
