@@ -1,19 +1,25 @@
+terraform {
+  required_providers {
+    # null_resource comes from the hashicorp/null provider
+    null = {
+      source  = "hashicorp/null"
+      version = "~> 3.2"
+    }
+  }
+}
 
 module "mymod1" {
-    source = "./mymod"
-    param1 = 15
+  source = "./mymod"
+  param1 = 15
 }
-
-
 
 module "mymod2" {
-    source = "./mymod"
-    param1 = 17
+  source = "./mymod"
+  param1 = 17
 }
 
-
-resource null_resource "stam" {
-    provisioner local-exec {
-        command = "echo return from mymod1: ${module.mymod1.plusone} from mymod2: ${module.mymod2.plusone}"
-    }
+resource "null_resource" "stam" {
+  provisioner "local-exec" {
+    command = "echo return from mymod1: ${module.mymod1.plusone} from mymod2: ${module.mymod2.plusone}"
+  }
 }

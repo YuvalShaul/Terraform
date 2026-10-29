@@ -2,7 +2,12 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.0"
+      version = "~> 6.0"
+    }
+    # random_string (used in ./ecmod) comes from the hashicorp/random provider
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
     }
   }
 }
